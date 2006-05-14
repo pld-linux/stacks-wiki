@@ -1,0 +1,49 @@
+--- stacks-wiki-0.5.1/www/includes/database.php	2005-11-07 06:18:56.000000000 +0200
++++ ./database.php	2006-05-14 20:45:54.187988649 +0300
+@@ -1,9 +1,5 @@
+ <?
+-$database_hostname = "localhost";
+-$database_username = "wiki";
+-$database_password = "wiki";
+-$database_database = "wiki";
+-$database_prefix = "";
++require_once "/etc/webapps/stacks-wiki/db.php";
+ 
+ function get_connection()
+ {
+--- /dev/null	2006-03-28 14:00:37.387408000 +0300
++++ ./db.php	2006-05-14 20:45:54.197988872 +0300
+@@ -0,0 +1,6 @@
++<?
++$database_hostname = "localhost";
++$database_username = "wiki";
++$database_password = "wiki";
++$database_database = "stacks-wiki";
++$database_prefix = "";
+--- stacks-wiki-0.5.1/schema.sql	2005-11-07 06:30:48.000000000 +0200
++++ ./m.sql	2006-05-14 20:45:54.187988649 +0300
+@@ -1,12 +1,12 @@
+-CREATE TABLE `test_links` (
++CREATE TABLE `links` (
+   `id` int(10) unsigned NOT NULL auto_increment,
+   `page_id` varchar(50) NOT NULL default '',
+   `link_id` varchar(50) NOT NULL default '',
+   `exists` tinyint(1) NOT NULL default '0',
+   PRIMARY KEY  (`id`)
+-) TYPE=MyISAM COMMENT='Links for the test database'
++) TYPE=MyISAM COMMENT='Links for the test database';
+ 
+-CREATE TABLE `test_pages` (
++CREATE TABLE `pages` (
+   `id` varchar(50) NOT NULL default '',
+   `category` varchar(50) NOT NULL default '',
+   `raw_content` text NOT NULL,
+@@ -21,5 +21,5 @@
+-CREATE TABLE `test_passwords` (
++CREATE TABLE `passwords` (
+   `id` int(10) unsigned NOT NULL auto_increment,
+   `password` char(32) NOT NULL default '',
+   PRIMARY KEY  (`id`)
+-) TYPE=MyISAM COMMENT='Passwords for the test wiki'
+\ No newline at end of file
++) TYPE=MyISAM COMMENT='Passwords for the test wiki';
