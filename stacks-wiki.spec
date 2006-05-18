@@ -1,4 +1,5 @@
-Summary:	Package that uses webapps configuration
+Summary:	Stack's Wiki - a lightweight wiki system
+Summary(pl):	Stack's Wiki - lekki system wiki
 Name:		stacks-wiki
 Version:	0.5.1
 Release:	0.3
@@ -22,8 +23,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Stack's Wiki is a light weight wiki system. It uses PHP and MySQL like
-most sites, but also uses AJAX for content mangement. It also uses
+most sites, but also uses AJAX for content management. It also uses
 Markdown for the raw content.
+
+%description -l pl
+Stack's Wiki to lekki system wiki. U¿ywa PHP i MySQL podobnie jak
+wiêkszo¶æ serwisów, ale u¿ywa tak¿e technologii AJAX do zarz±dzania
+tre¶ci±. U¿ywa tak¿e Markdown do surowej tre¶ci.
 
 %prep
 %setup -q
@@ -52,6 +58,9 @@ cp -a db.php $RPM_BUILD_ROOT%{_sysconfdir}/db.php
 install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
 install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %triggerin -- apache1
 %webapp_register apache %{_webapp}
 
@@ -63,9 +72,6 @@ install apache.conf $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 
 %triggerun -- apache < 2.2.0, apache-base
 %webapp_unregister httpd %{_webapp}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
