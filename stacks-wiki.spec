@@ -10,9 +10,9 @@ Source0:	http://dl.sourceforge.net/stacks-wiki/%{name}-%{version}.tar.bz2
 Patch0:		%{name}.patch
 URL:		http://www.shortround.net/
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	php
-Requires:	php-mysql
+Requires:	php(mysql)
 Requires:	webapps
+Requires:	webserver(php)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
