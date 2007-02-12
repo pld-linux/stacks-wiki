@@ -1,5 +1,5 @@
 Summary:	Stack's Wiki - a lightweight wiki system
-Summary(pl.UTF-8):   Stack's Wiki - lekki system wiki
+Summary(pl.UTF-8):	Stack's Wiki - lekki system wiki
 Name:		stacks-wiki
 Version:	0.5.1
 Release:	0.3
