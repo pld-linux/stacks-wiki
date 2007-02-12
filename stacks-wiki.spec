@@ -1,5 +1,5 @@
 Summary:	Stack's Wiki - a lightweight wiki system
-Summary(pl):	Stack's Wiki - lekki system wiki
+Summary(pl.UTF-8):   Stack's Wiki - lekki system wiki
 Name:		stacks-wiki
 Version:	0.5.1
 Release:	0.3
@@ -26,10 +26,10 @@ Stack's Wiki is a light weight wiki system. It uses PHP and MySQL like
 most sites, but also uses AJAX for content management. It also uses
 Markdown for the raw content.
 
-%description -l pl
-Stack's Wiki to lekki system wiki. U¿ywa PHP i MySQL podobnie jak
-wiêkszo¶æ serwisów, ale u¿ywa tak¿e technologii AJAX do zarz±dzania
-tre¶ci±. U¿ywa tak¿e Markdown do surowej tre¶ci.
+%description -l pl.UTF-8
+Stack's Wiki to lekki system wiki. UÅ¼ywa PHP i MySQL podobnie jak
+wiÄ™kszoÅ›Ä‡ serwisÃ³w, ale uÅ¼ywa takÅ¼e technologii AJAX do zarzÄ…dzania
+treÅ›ciÄ…. UÅ¼ywa takÅ¼e Markdown do surowej treÅ›ci.
 
 %prep
 %setup -q
