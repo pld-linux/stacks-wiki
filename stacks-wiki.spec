@@ -2,7 +2,7 @@ Summary:	Stack's Wiki - a lightweight wiki system
 Summary(pl.UTF-8):	Stack's Wiki - lekki system wiki
 Name:		stacks-wiki
 Version:	0.5.1
-Release:	0.3
+Release:	0.4
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/stacks-wiki/%{name}-%{version}.tar.bz2
@@ -11,6 +11,7 @@ Patch0:		%{name}.patch
 URL:		http://www.shortround.net/
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	php(mysql)
+Requires:	php(session)
 Requires:	webapps
 Requires:	webserver(php)
 BuildArch:	noarch
@@ -35,14 +36,14 @@ treścią. Używa także Markdown do surowej treści.
 %setup -q
 %patch0 -p1
 
-cat >apache.conf <<'EOF'
+cat > apache.conf <<'EOF'
 Alias /%{name} %{_datadir}/%{name}
 <Directory %{_datadir}/%{name}>
 	Allow from all
 </Directory>
 EOF
 
-cat >README.PLD <<'EOF'
+cat > README.PLD <<'EOF'
 To create database invoke:
 mysqladmin create stacks-wiki
 mysql> GRANT SELECT,INSERT,UPDATE,DELETE ON `stacks-wiki`.* TO 'wiki'@localhost IDENTIFIED BY 'wiki';
