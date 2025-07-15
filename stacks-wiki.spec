@@ -34,7 +34,7 @@ treścią. Używa także Markdown do surowej treści.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 cat > apache.conf <<'EOF'
 Alias /%{name} %{_datadir}/%{name}
